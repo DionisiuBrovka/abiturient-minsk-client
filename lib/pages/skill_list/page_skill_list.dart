@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/no_network_placeholder.dart';
 import 'package:flutter_eduapp_new/bloc/skill_list/bloc/skill_list_bloc.dart';
+import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_search_bar.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_viewholder.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_eduapp_new/widgets/drawer/custom_drawer.dart';
@@ -30,9 +31,7 @@ class PageSkillList extends StatelessWidget {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Placeholder(
-                          fallbackHeight: 150,
-                        ),
+                        const SkillListSearchBar(),
                         Expanded(
                           child: ListView(shrinkWrap: true, children: [
                             SkillListViewholder(
