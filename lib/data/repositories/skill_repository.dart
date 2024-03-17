@@ -9,8 +9,8 @@ class SkillRepository {
 
     await Future.delayed(const Duration(seconds: 1));
 
-    final response =
-        await http.get(Uri.parse('http://127.0.0.1:8000/api/v2/skill/'));
+    final response = await http
+        .get(Uri.parse('http://eduapp.dionisiubrovka.online/api/v2/skill/'));
     var data = jsonDecode(utf8.decode(response.bodyBytes));
 
     if (response.statusCode == 200) {
