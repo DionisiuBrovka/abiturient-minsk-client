@@ -33,7 +33,7 @@ class PageSkillList extends StatelessWidget {
                         const SkillListSearchBar(),
                         Expanded(
                           child: SkillListViewholder(
-                            state: state,
+                            skills: state.skillsList,
                           ),
                         ),
                       ],

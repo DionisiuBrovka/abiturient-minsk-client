@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_eduapp_new/bloc/skill_list/bloc/skill_list_bloc.dart';
+import 'package:flutter_eduapp_new/data/models/skill_model.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_adapter.dart';
 
 class SkillListViewholder extends StatelessWidget {
-  const SkillListViewholder({super.key, required this.state});
+  const SkillListViewholder({super.key, required this.skills});
 
-  final SkillListSucsessState state;
+  final List<SkillModel> skills;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,9 @@ class SkillListViewholder extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: ListView.builder(
           shrinkWrap: true,
-          itemCount: state.skillsList.length,
+          itemCount: skills.length,
           itemBuilder: (context, index) {
-            return SkillListAdapter(skill: state.skillsList[index]);
+            return SkillListAdapter(skill: skills[index]);
           }),
     );
   }
