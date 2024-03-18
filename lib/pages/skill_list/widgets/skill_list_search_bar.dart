@@ -5,6 +5,14 @@ class SkillListSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Padding(
+      padding: EdgeInsets.all(10.0),
+      child: TextField(
+        decoration: InputDecoration(
+            labelText: "Поиск",
+            suffixIcon: Icon(Icons.search),
+            border: UnderlineInputBorder()),
+      ),
+    );
   }
 }
