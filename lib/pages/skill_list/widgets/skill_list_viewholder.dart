@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_eduapp_new/bloc/skill_list/bloc/skill_list_bloc.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_adapter.dart';
 

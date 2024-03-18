@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/no_network_placeholder.dart';
@@ -33,11 +32,9 @@ class PageSkillList extends StatelessWidget {
                       children: [
                         const SkillListSearchBar(),
                         Expanded(
-                          child: ListView(shrinkWrap: true, children: [
-                            SkillListViewholder(
-                              state: state,
-                            )
-                          ]),
+                          child: SkillListViewholder(
+                            state: state,
+                          ),
                         ),
                       ],
                     );
