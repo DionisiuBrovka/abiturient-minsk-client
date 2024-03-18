@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_eduapp_new/pages/establishment_detail/page_establishment_detail.dart';
+import 'package:flutter_eduapp_new/pages/establishment_list/page_establishment_list.dart';
 import 'package:flutter_eduapp_new/pages/event_list/page_event_list.dart';
 import 'package:flutter_eduapp_new/pages/home/page_home.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/page_skill_list.dart';
