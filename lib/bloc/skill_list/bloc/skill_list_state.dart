@@ -9,8 +9,10 @@ final class SkillListLoadingState extends SkillListState {}
 
 final class SkillListSucsessState extends SkillListState {
   final List<SkillModel> skillsList;
+  final List<SkillModel> skillsListFiltered;
 
-  SkillListSucsessState({required this.skillsList});
+  SkillListSucsessState(
+      {required this.skillsList, required this.skillsListFiltered});
 }
 
 final class SkillListErrorState extends SkillListState {}

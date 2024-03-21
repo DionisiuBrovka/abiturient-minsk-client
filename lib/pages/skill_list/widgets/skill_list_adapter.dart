@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
+import 'package:flutter_eduapp_new/pages/skill_detail/page_skill_detail.dart';
 
 class SkillListAdapter extends StatelessWidget {
   const SkillListAdapter({
@@ -15,12 +16,14 @@ class SkillListAdapter extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8),
       child: Card(
         elevation: 3,
-        color: Theme.of(context).colorScheme.surfaceVariant,
         child: InkWell(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           hoverColor: const Color.fromARGB(255, 139, 185, 255),
           focusColor: const Color.fromARGB(255, 176, 207, 255),
-          onTap: () {},
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => PageSkillDetail(
+                    id: skill.id,
+                  ))),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/no_network_placeholder.dart';
 import 'package:flutter_eduapp_new/bloc/skill_list/bloc/skill_list_bloc.dart';
+import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_filter.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_search_bar.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_viewholder.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
@@ -30,10 +32,28 @@ class PageSkillList extends StatelessWidget {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const SkillListSearchBar(),
+                        // Image.asset(
+                        //   "assets/fon.jpg",
+                        //   fit: BoxFit.cover,
+                        //   height: 150,
+                        //   width: double.infinity,
+                        // ),
                         Expanded(
-                          child: SkillListViewholder(
-                            skills: state.skillsList,
+                          child: SizedBox(
+                            width: 1000,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                const SkillListSearchBar(),
+                                const SkillListFilter(),
+                                Expanded(
+                                  child: SkillListViewholder(
+                                    skills: state.skillsListFiltered,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],

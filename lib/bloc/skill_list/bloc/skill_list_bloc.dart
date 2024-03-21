@@ -18,12 +18,56 @@ class SkillListBloc extends Bloc<SkillListEvent, SkillListState> {
     on<LoadSkillListEvent>((event, emit) async {
       emit(SkillListLoadingState());
       try {
+        List<SkillModel> skillsList = await SkillRepository.getSkillList();
+        skillsList.sort((a, b) => a.code!.compareTo(b.code!));
         emit(SkillListSucsessState(
-            skillsList: await SkillRepository.getSkillList()));
+            skillsList: skillsList, skillsListFiltered: skillsList));
       } catch (e) {
         log(e.toString());
         emit(SkillListErrorState());
       }
+    });
+
+    on<FilterCTypeSSOSkillListEvent>((event, emit) async {
+      emit(SkillListSucsessState(
+          skillsList: event.skillsList,
+          skillsListFiltered: event.skillsList.where((element) {
+            if (element.specialty?.cType == "ССО") {
+              return true;
+            } else {
+              return false;
+            }
+          }).toList()));
+    });
+
+    on<FilterCTypePTOSkillListEvent>((event, emit) async {
+      emit(SkillListSucsessState(
+          skillsList: event.skillsList,
+          skillsListFiltered: event.skillsList.where((element) {
+            if (element.specialty?.cType == "ПТО") {
+              return true;
+            } else {
+              return false;
+            }
+          }).toList()));
+    });
+
+    on<FilterCTypeAllSkillListEvent>((event, emit) async {
+      emit(SkillListSucsessState(
+        skillsList: event.skillsList,
+        skillsListFiltered: event.skillsList,
+      ));
+    });
+
+    on<FilterTitleSkillListEvent>((event, emit) {
+      emit(SkillListSucsessState(
+        skillsList: event.skillsList,
+        skillsListFiltered: event.skillsList
+            .where((element) => "${element.title} ${element.searchtag}"
+                .toLowerCase()
+                .contains(event.query.toLowerCase()))
+            .toList(),
+      ));
     });
   }
 }

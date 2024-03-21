@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/establishment_list/bloc/establishment_list_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/no_network_placeholder.dart';
+import 'package:flutter_eduapp_new/pages/establishment_list/widgets/establishment_list_search_bar.dart';
 import 'package:flutter_eduapp_new/pages/establishment_list/widgets/establishment_list_viewholder.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_eduapp_new/widgets/drawer/custom_drawer.dart';
@@ -31,13 +33,31 @@ class PageEstablishmentList extends StatelessWidget {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
+                        Image.asset(
+                          "assets/fon.jpg",
+                          fit: BoxFit.cover,
+                          height: 150,
+                          width: double.infinity,
+                        ),
                         Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: EstablishmentListViewholder(
-                                establishments: state.establishmentList),
+                          child: SizedBox(
+                            width: 1000,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const EstablishmentListSearchBar(),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: EstablishmentListViewholder(
+                                        establishments:
+                                            state.establishmentList),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        )
+                        ),
                       ],
                     );
                   } else {
@@ -51,7 +71,7 @@ class PageEstablishmentList extends StatelessWidget {
           }
         }),
         drawer: const CustomDrawer(
-          selectedIndex: 2,
+          selectedIndex: 1,
         ));
   }
 }
