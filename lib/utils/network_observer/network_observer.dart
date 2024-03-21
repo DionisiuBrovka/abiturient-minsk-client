@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'package:connectivity_plus/connectivity_plus.dart';

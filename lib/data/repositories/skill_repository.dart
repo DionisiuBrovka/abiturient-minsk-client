@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter_eduapp_new/api/api_controller.dart';
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
