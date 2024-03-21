@@ -58,8 +58,8 @@ class CustomDrawer extends StatelessWidget {
             label: Text("Учреждения образования")),
         NavigationDrawerDestination(
             icon: Icon(Icons.person), label: Text("Специальности")),
-        NavigationDrawerDestination(
-            icon: Icon(Icons.calendar_month), label: Text("Мероприятия")),
+        // NavigationDrawerDestination(
+        //     icon: Icon(Icons.calendar_month), label: Text("Мероприятия")),
         Divider(),
         NavigationDrawerDestination(
             icon: Icon(Icons.description_rounded),
