@@ -15,7 +15,7 @@ class PageEstablishmentList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBar(
-          customTitle: const Text("Учреждения образования"),
+          customTitle: const Text("Колледжи"),
         ),
         body: BlocBuilder<NetworkBloc, NetworkState>(builder: (context, state) {
           if (state is NetworkSuccess) {

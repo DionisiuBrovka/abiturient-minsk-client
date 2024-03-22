@@ -40,6 +40,8 @@ dependencies:
   flutter_bloc: ^8.1.4
   connectivity_plus: ^5.0.2
   flutter_markdown: ^0.6.22
+  url_launcher: ^6.2.5
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:

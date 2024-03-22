@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_eduapp_new/pages/documents_deadline/page_document_deadline.dart';
+import 'package:flutter_eduapp_new/pages/documents_list/page_document_list.dart';
+import 'package:flutter_eduapp_new/pages/documents_schedule/page_document_schedule.dart';
 import 'package:flutter_eduapp_new/pages/establishment_list/page_establishment_list.dart';
 import 'package:flutter_eduapp_new/pages/faq/page_faq.dart';
 import 'package:flutter_eduapp_new/pages/home/page_home.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/page_skill_list.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key, required this.selectedIndex});
@@ -35,6 +39,34 @@ class CustomDrawer extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => const PageSkillList(),
                 ));
+            break;
+
+          case 3:
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PageDocumentSchedule(),
+                ));
+            break;
+
+          case 4:
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PageDocumentList(),
+                ));
+            break;
+
+          case 5:
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PageDocumentDeadline(),
+                ));
+            break;
+
+          case 6:
+            launchUrl(Uri.parse('https://profitest.ripo.by/public/main'));
             break;
 
           case 7:
@@ -82,8 +114,7 @@ class CustomDrawer extends StatelessWidget {
         NavigationDrawerDestination(
             icon: Icon(Icons.home), label: Text("Главная")),
         NavigationDrawerDestination(
-            icon: Icon(Icons.account_balance),
-            label: Text("Учреждения образования")),
+            icon: Icon(Icons.account_balance), label: Text("Колледжи")),
         NavigationDrawerDestination(
             icon: Icon(Icons.person), label: Text("Специальности")),
         // NavigationDrawerDestination(
@@ -91,15 +122,15 @@ class CustomDrawer extends StatelessWidget {
         Divider(),
         NavigationDrawerDestination(
             icon: Icon(Icons.description_rounded),
-            label: Text("Правила приема")),
+            label: Text("График работы комисии")),
         NavigationDrawerDestination(
             icon: Icon(Icons.description_rounded),
-            label: Text("Список документов")),
+            label: Text("Документы для поступления")),
         NavigationDrawerDestination(
             icon: Icon(Icons.description_rounded),
             label: Text("Сроки подачи документов")),
         NavigationDrawerDestination(
-            icon: Icon(Icons.description_rounded),
+            icon: Icon(Icons.checklist),
             label: Text("Профориентационный тест")),
         Divider(),
         NavigationDrawerDestination(

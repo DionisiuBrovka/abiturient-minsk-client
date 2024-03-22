@@ -5,7 +5,6 @@ import 'package:flutter_eduapp_new/bloc/internet/no_network_placeholder.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_eduapp_new/widgets/drawer/custom_drawer.dart';
 
-import 'widgets/page_home_banners.dart';
 import 'widgets/page_home_description.dart';
 import 'widgets/page_home_functionalyti_helper.dart';
 import 'widgets/page_home_platform_select.dart';
@@ -27,7 +26,7 @@ class PageHome extends StatelessWidget {
                 Image.asset(
                   "assets/fon_main.png",
                   fit: BoxFit.cover,
-                  height: 120,
+                  height: 160,
                   width: double.infinity,
                 ),
                 Expanded(
@@ -41,7 +40,7 @@ class PageHome extends StatelessWidget {
                           PageHomeDescription(),
                           PageHomeFunctionalytiHelper(),
                           PageHomePlatformSelect(),
-                          PageHomeBanners()
+                          // PageHomeBanners()
                         ],
                       ),
                     ),
