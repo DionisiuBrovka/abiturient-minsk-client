@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_eduapp_new/pages/documents_schedule/schedule_markdown_data.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_eduapp_new/widgets/drawer/custom_drawer.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class PageDocumentSchedule extends StatelessWidget {
   const PageDocumentSchedule({super.key});
@@ -11,22 +13,24 @@ class PageDocumentSchedule extends StatelessWidget {
       appBar: CustomAppBar(
         customTitle: const Text("График работы комисии"),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
+      body: ListView(
+        shrinkWrap: true,
         children: [
           Image.asset(
-            "assets/fon.jpg",
+            "assets/faq-shudle.jpg",
             fit: BoxFit.cover,
-            height: 150,
+            height: 200,
             width: double.infinity,
           ),
-          const Expanded(
-            child: SizedBox(
-              width: 1000,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [],
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 1000,
+                child: MarkdownBody(
+                  data: SCHEDULE_MARKDOWN_DATA,
+                  selectable: false,
+                ),
               ),
             ),
           ),

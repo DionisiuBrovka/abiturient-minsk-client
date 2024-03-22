@@ -108,9 +108,14 @@ class CustomDrawer extends StatelessWidget {
       },
       children: const [
         UserAccountsDrawerHeader(
-          accountName: Text("Абитуриент МИНСК"),
-          accountEmail: Text("приложения для помощи выбора будущего"),
-        ),
+            accountName: Text("Абитуриент МИНСК"),
+            accountEmail: Text("приложения для помощи выбора будущего"),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                      'assets/header-back.png',
+                    ),
+                    fit: BoxFit.cover))),
         NavigationDrawerDestination(
             icon: Icon(Icons.home), label: Text("Главная")),
         NavigationDrawerDestination(

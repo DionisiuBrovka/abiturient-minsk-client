@@ -1,4 +1,5 @@
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
+import 'package:flutter_eduapp_new/data/models/svod_table.dart';
 
 import 'event_model.dart';
 import 'gallery_model.dart';
@@ -9,7 +10,7 @@ class EstablishmentModel {
   int id;
   List<EventModel>? eventsList;
   List<GalleryModel>? gallerysList;
-  List<SkillModel>? skillsList;
+  List<SvodTable>? svodSkillsList;
   String? title;
   String? shortTitle;
   String? desc;
@@ -33,7 +34,7 @@ class EstablishmentModel {
       {required this.id,
       this.eventsList,
       this.gallerysList,
-      this.skillsList,
+      this.svodSkillsList,
       this.title,
       this.shortTitle,
       this.desc,
@@ -67,9 +68,9 @@ class EstablishmentModel {
       });
     }
     if (json['skills'] != null) {
-      skillsList = <SkillModel>[];
+      svodSkillsList = <SvodTable>[];
       json['skills'].forEach((v) {
-        skillsList!.add(SkillModel.fromJson(v));
+        svodSkillsList!.add(SvodTable.fromJson(v));
       });
     }
     title = json['title'];
@@ -101,8 +102,8 @@ class EstablishmentModel {
     if (gallerysList != null) {
       data['gallery'] = gallerysList!.map((v) => v.toJson()).toList();
     }
-    if (skillsList != null) {
-      data['skills'] = skillsList!.map((v) => v.toJson()).toList();
+    if (svodSkillsList != null) {
+      data['skills'] = svodSkillsList!.map((v) => v.toJson()).toList();
     }
     data['title'] = title;
     data['short_title'] = shortTitle;

@@ -27,28 +27,20 @@ class PageSkillDetail extends StatelessWidget {
                 if (state is SkillDetailLoadingState) {
                   return const CircularProgressIndicator();
                 } else if (state is SkillDetailSucsessState) {
-                  return Column(
-                    mainAxisSize: MainAxisSize.min,
+                  return ListView(
+                    shrinkWrap: true,
                     children: [
-                      // Image.asset(
-                      //   "assets/fon_alt.jpg",
-                      //   fit: BoxFit.cover,
-                      //   height: 150,
-                      //   width: double.infinity,
-                      // ),
-                      Expanded(
-                        child: SizedBox(
-                          width: 600,
-                          child: ListView(
-                            shrinkWrap: true,
-                            children: [
-                              Image.network(
-                                state.skill.photo ?? "",
-                                width: double.infinity,
-                                fit: BoxFit.fitWidth,
-                              )
-                            ],
-                          ),
+                      SizedBox(
+                        width: 600,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Image.network(
+                              state.skill.photo ?? "",
+                              width: 600,
+                              fit: BoxFit.fitWidth,
+                            )
+                          ],
                         ),
                       ),
                     ],

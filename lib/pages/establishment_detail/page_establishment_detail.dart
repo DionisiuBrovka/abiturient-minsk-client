@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/establishment_detail/bloc/establishment_detail_bloc.dart';
@@ -84,12 +86,15 @@ class PageEstablishmentDetail extends StatelessWidget {
                                 const Divider(),
                                 ListView.builder(
                                     shrinkWrap: true,
-                                    itemCount:
-                                        state.establishment.skillsList!.length,
+                                    itemCount: state
+                                        .establishment.svodSkillsList!.length,
                                     itemBuilder: (context, index) {
                                       return SkillListAdapter(
-                                          skill: state.establishment
-                                              .skillsList![index]);
+                                          skill: state
+                                              .establishment
+                                              .svodSkillsList![index]
+                                              .skill!
+                                              .first);
                                     }),
                                 Text(
                                   "Мы на карте",

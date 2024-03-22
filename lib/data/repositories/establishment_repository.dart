@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter_eduapp_new/api/api_controller.dart';
 import 'package:flutter_eduapp_new/data/models/establishment_model.dart';
@@ -30,7 +31,8 @@ class EstablishmentRepository {
     var data = jsonDecode(utf8.decode(response.bodyBytes));
 
     if (response.statusCode == 200) {
-      result = EstablishmentModel.fromJson(data as Map<String, dynamic>);
+      result = EstablishmentModel.fromJson(data);
+      log("--${result.svodSkillsList}");
     }
     return result;
   }

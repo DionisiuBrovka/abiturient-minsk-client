@@ -1,6 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_eduapp_new/pages/documents_deadline/deadline_markdown_data.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_eduapp_new/widgets/drawer/custom_drawer.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class PageDocumentDeadline extends StatelessWidget {
   const PageDocumentDeadline({super.key});
@@ -11,22 +15,24 @@ class PageDocumentDeadline extends StatelessWidget {
       appBar: CustomAppBar(
         customTitle: const Text("Сроки подачи документов"),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
+      body: ListView(
+        shrinkWrap: true,
         children: [
           Image.asset(
-            "assets/fon.jpg",
+            "assets/faq-time.jpg",
             fit: BoxFit.cover,
-            height: 150,
+            height: 200,
             width: double.infinity,
           ),
-          const Expanded(
-            child: SizedBox(
-              width: 1000,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [],
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 1000,
+                child: MarkdownBody(
+                  data: DEADLINE_MARKDOWN_DATA,
+                  selectable: false,
+                ),
               ),
             ),
           ),

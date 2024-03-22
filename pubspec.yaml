@@ -87,6 +87,10 @@ flutter:
     - assets/fon_alt.jpg
     - assets/fon_main.png
     - assets/icon/icon.png
+    - assets/faq-docs.jpg
+    - assets/faq-shudle.jpg
+    - assets/faq-time.jpg
+    - assets/header-back.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
