@@ -35,6 +35,26 @@ class CustomDrawer extends StatelessWidget {
                   builder: (context) => const PageSkillList(),
                 ));
             break;
+
+          case 8:
+            showAboutDialog(
+                context: context,
+                applicationName: "Абитуриент Минск",
+                applicationVersion: "0.2.0a",
+                applicationIcon: Image.asset(
+                  "assets/icon/icon.png",
+                  width: 55,
+                  height: 55,
+                ),
+                children: [
+                  const Divider(),
+                  const Text(
+                      "Приложение разработано для Минского коммитета по образованию."),
+                  const Text("Разработал Бровка Д.С."),
+                  //TODO
+                ]);
+
+            break;
           // case 3:
           //   Navigator.pushReplacement(
           //       context,
