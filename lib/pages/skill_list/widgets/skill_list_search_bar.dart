@@ -28,10 +28,9 @@ class _SkillListSearchBarState extends State<SkillListSearchBar> {
             padding: const EdgeInsets.all(10.0),
             child: TextField(
               controller: queryController,
-              onChanged: (value) {
-                context.read<SkillListBloc>().add(FilterTitleSkillListEvent(
-                    state.skillsList, queryController.text));
-              },
+              onChanged: (value) => context.read<SkillListBloc>().add(
+                  FilterTitleSkillListEvent(
+                      state.skillsList, queryController.text)),
               decoration: const InputDecoration(
                   labelText: "Поиск",
                   suffixIcon: Icon(Icons.search),

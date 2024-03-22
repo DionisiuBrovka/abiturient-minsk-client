@@ -9,11 +9,48 @@ class EstablishmentListViewholder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        shrinkWrap: true,
-        itemCount: establishments.length,
-        itemBuilder: (context, index) {
-          return EstablishmentListAdapter(establishment: establishments[index]);
-        });
+    if (establishments.isNotEmpty) {
+      return ListView.builder(
+          shrinkWrap: true,
+          itemCount: establishments.length,
+          itemBuilder: (context, index) {
+            return EstablishmentListAdapter(
+                establishment: establishments[index]);
+          });
+    } else {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SizedBox(
+            width: 800,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Icon(
+                  Icons.sentiment_dissatisfied,
+                  size: 80,
+                  color: Theme.of(context).disabledColor,
+                ),
+                Text(
+                  "Упс, что то пошло не так ...",
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                      color: Theme.of(context).disabledColor,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  "Мы не смогли найти учреждений образования по вашему запросу",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(color: Theme.of(context).disabledColor),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+    }
   }
 }

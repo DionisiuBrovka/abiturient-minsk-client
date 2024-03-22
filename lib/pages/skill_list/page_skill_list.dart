@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/no_network_placeholder.dart';
@@ -32,12 +31,12 @@ class PageSkillList extends StatelessWidget {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Image.asset(
-                        //   "assets/fon.jpg",
-                        //   fit: BoxFit.cover,
-                        //   height: 150,
-                        //   width: double.infinity,
-                        // ),
+                        Image.asset(
+                          "assets/fon.jpg",
+                          fit: BoxFit.cover,
+                          height: 150,
+                          width: double.infinity,
+                        ),
                         Expanded(
                           child: SizedBox(
                             width: 1000,

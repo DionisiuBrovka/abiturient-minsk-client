@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/establishment_list/bloc/establishment_list_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
@@ -51,7 +50,7 @@ class PageEstablishmentList extends StatelessWidget {
                                     padding: const EdgeInsets.all(8.0),
                                     child: EstablishmentListViewholder(
                                         establishments:
-                                            state.establishmentList),
+                                            state.establishmentListFiltered),
                                   ),
                                 )
                               ],

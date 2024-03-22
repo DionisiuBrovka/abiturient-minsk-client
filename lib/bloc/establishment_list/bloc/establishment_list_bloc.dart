@@ -21,12 +21,25 @@ class EstablishmentListBloc
     on<LoadEstablishmentListEvent>((event, emit) async {
       emit(EstablishmentListLoadingState());
       try {
+        List<EstablishmentModel> establishmentList =
+            await EstablishmentRepository.getSkillList();
         emit(EstablishmentListSucsessState(
-            establishmentList: await EstablishmentRepository.getSkillList()));
+            establishmentList: establishmentList,
+            establishmentListFiltered: establishmentList));
       } catch (e) {
         log(e.toString());
         emit(EstablishmentListErrorState());
       }
+    });
+
+    on<FilterEstablishmentListEvent>((event, emit) {
+      emit(EstablishmentListSucsessState(
+          establishmentList: event.establishmentList,
+          establishmentListFiltered: event.establishmentList
+              .where((element) => element.title!
+                  .toLowerCase()
+                  .contains(event.query.toLowerCase()))
+              .toList()));
     });
   }
 }

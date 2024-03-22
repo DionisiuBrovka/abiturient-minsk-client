@@ -35,7 +35,7 @@ class SkillListViewholder extends StatelessWidget {
                 ),
                 Text(
                   "Упс, что то пошло не так ...",
-                  style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                       color: Theme.of(context).disabledColor,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
@@ -44,7 +44,7 @@ class SkillListViewholder extends StatelessWidget {
                   "Мы не смогли найти специальностей по вашему запросу",
                   style: Theme.of(context)
                       .textTheme
-                      .headlineMedium!
+                      .headlineSmall!
                       .copyWith(color: Theme.of(context).disabledColor),
                   textAlign: TextAlign.center,
                 )

@@ -9,8 +9,11 @@ final class EstablishmentListLoadingState extends EstablishmentListState {}
 
 final class EstablishmentListSucsessState extends EstablishmentListState {
   final List<EstablishmentModel> establishmentList;
+  final List<EstablishmentModel> establishmentListFiltered;
 
-  EstablishmentListSucsessState({required this.establishmentList});
+  EstablishmentListSucsessState(
+      {required this.establishmentList,
+      required this.establishmentListFiltered});
 }
 
 final class EstablishmentListErrorState extends EstablishmentListState {}
