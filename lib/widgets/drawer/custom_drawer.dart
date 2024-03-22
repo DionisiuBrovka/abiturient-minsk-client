@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/pages/establishment_list/page_establishment_list.dart';
+import 'package:flutter_eduapp_new/pages/faq/page_faq.dart';
 import 'package:flutter_eduapp_new/pages/home/page_home.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/page_skill_list.dart';
 
@@ -33,6 +34,14 @@ class CustomDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const PageSkillList(),
+                ));
+            break;
+
+          case 7:
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PageFAQ(),
                 ));
             break;
 

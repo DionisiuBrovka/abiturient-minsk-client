@@ -2,10 +2,11 @@ class FAQModel {
   int? id;
   String? question;
   String? anser;
+  bool isExpanded;
 
-  FAQModel({this.id, this.question, this.anser});
+  FAQModel({this.id, this.question, this.anser, this.isExpanded = false});
 
-  FAQModel.fromJson(Map<String, dynamic> json) {
+  FAQModel.fromJson(Map<String, dynamic> json) : isExpanded = false {
     id = json['id'];
     question = json['q'];
     anser = json['a'];
