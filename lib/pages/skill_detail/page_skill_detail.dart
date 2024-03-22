@@ -30,19 +30,24 @@ class PageSkillDetail extends StatelessWidget {
                   return Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset(
-                        "assets/fon_alt.jpg",
-                        fit: BoxFit.cover,
-                        height: 150,
-                        width: double.infinity,
-                      ),
-                      const Expanded(
+                      // Image.asset(
+                      //   "assets/fon_alt.jpg",
+                      //   fit: BoxFit.cover,
+                      //   height: 150,
+                      //   width: double.infinity,
+                      // ),
+                      Expanded(
                         child: SizedBox(
-                          width: 1000,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [],
+                          width: 600,
+                          child: ListView(
+                            shrinkWrap: true,
+                            children: [
+                              Image.network(
+                                state.skill.photo ?? "",
+                                width: double.infinity,
+                                fit: BoxFit.fitWidth,
+                              )
+                            ],
                           ),
                         ),
                       ),

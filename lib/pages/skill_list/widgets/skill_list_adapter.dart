@@ -43,6 +43,11 @@ class SkillListAdapter extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
+                        skill.title ?? "---",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      const Divider(),
+                      Text(
                         skill.specialty?.title ?? "---",
                         style: Theme.of(context)
                             .textTheme
@@ -52,6 +57,9 @@ class SkillListAdapter extends StatelessWidget {
                       Text(skill.code ?? "---")
                     ],
                   ),
+                ),
+                const SizedBox(
+                  width: 16,
                 ),
                 const Icon(Icons.arrow_forward_ios)
               ],

@@ -8,7 +8,7 @@ class SkillRepository {
   static Future<List<SkillModel>> getList() async {
     List<SkillModel> result = [];
 
-    final response = await http.get(Uri.parse('$API_ROOT$API_VER/skill/'));
+    final response = await http.get(Uri.parse('$API_ROOT/v1/skill/linked/'));
     var data = jsonDecode(utf8.decode(response.bodyBytes));
 
     if (response.statusCode == 200) {
