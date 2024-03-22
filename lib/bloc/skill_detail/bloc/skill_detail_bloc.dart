@@ -17,7 +17,7 @@ class SkillDetailBloc extends Bloc<SkillDetailEvent, SkillDetailState> {
     on<LoadSkillDetailEvent>((event, emit) async {
       emit(SkillDetailLoadingState());
       try {
-        SkillModel? skill = await SkillRepository.getSkill(event.id);
+        SkillModel? skill = await SkillRepository.getObject(event.id);
         if (skill != null) {
           emit(SkillDetailSucsessState(skill: skill));
         } else {

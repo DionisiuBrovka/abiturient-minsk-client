@@ -5,7 +5,7 @@ import 'package:flutter_eduapp_new/data/models/skill_model.dart';
 import 'package:http/http.dart' as http;
 
 class SkillRepository {
-  static Future<List<SkillModel>> getSkillList() async {
+  static Future<List<SkillModel>> getList() async {
     List<SkillModel> result = [];
 
     final response = await http.get(Uri.parse('$API_ROOT$API_VER/skill/'));
@@ -19,7 +19,7 @@ class SkillRepository {
     return result;
   }
 
-  static Future<SkillModel?> getSkill(int id) async {
+  static Future<SkillModel?> getObject(int id) async {
     SkillModel? result;
 
     final response = await http.get(Uri.parse('$API_ROOT$API_VER/skill/$id/'));

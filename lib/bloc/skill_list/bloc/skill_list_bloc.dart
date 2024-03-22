@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
 import 'package:flutter_eduapp_new/data/repositories/skill_repository.dart';
@@ -18,7 +19,7 @@ class SkillListBloc extends Bloc<SkillListEvent, SkillListState> {
     on<LoadSkillListEvent>((event, emit) async {
       emit(SkillListLoadingState());
       try {
-        List<SkillModel> skillsList = await SkillRepository.getSkillList();
+        List<SkillModel> skillsList = await SkillRepository.getList();
         skillsList.sort((a, b) => a.code!.compareTo(b.code!));
         emit(SkillListSucsessState(
             skillsList: skillsList, skillsListFiltered: skillsList));

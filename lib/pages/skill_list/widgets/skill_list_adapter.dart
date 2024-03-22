@@ -18,7 +18,7 @@ class SkillListAdapter extends StatelessWidget {
         elevation: 3,
         child: InkWell(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
-          hoverColor: const Color.fromARGB(255, 139, 185, 255),
+          hoverColor: const Color.fromARGB(255, 207, 226, 255),
           focusColor: const Color.fromARGB(255, 176, 207, 255),
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => PageSkillDetail(

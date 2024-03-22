@@ -22,7 +22,7 @@ class EstablishmentListBloc
       emit(EstablishmentListLoadingState());
       try {
         List<EstablishmentModel> establishmentList =
-            await EstablishmentRepository.getSkillList();
+            await EstablishmentRepository.getList();
         emit(EstablishmentListSucsessState(
             establishmentList: establishmentList,
             establishmentListFiltered: establishmentList));
