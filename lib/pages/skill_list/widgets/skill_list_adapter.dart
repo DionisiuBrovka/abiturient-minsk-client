@@ -13,7 +13,7 @@ class SkillListAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.only(bottom: 8, right: 10),
       child: Card(
         elevation: 3,
         child: InkWell(
@@ -48,7 +48,7 @@ class SkillListAdapter extends StatelessWidget {
                       ),
                       const Divider(),
                       Text(
-                        skill.specialty?.title ?? "---",
+                        skill.specialty.title ?? "---",
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge
