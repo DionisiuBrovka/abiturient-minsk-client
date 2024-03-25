@@ -1,4 +1,4 @@
-import 'package:flutter_eduapp_new/data/models/svod_table.dart';
+import 'package:flutter_eduapp_new/data/models/svod_table_model.dart';
 
 import 'event_model.dart';
 import 'gallery_model.dart';

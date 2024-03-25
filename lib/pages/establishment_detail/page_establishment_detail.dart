@@ -4,7 +4,7 @@ import 'package:flutter_eduapp_new/bloc/establishment_detail/bloc/establishment_
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/no_network_placeholder.dart';
 import 'package:flutter_eduapp_new/data/models/establishment_model.dart';
-import 'package:flutter_eduapp_new/data/models/svod_table.dart';
+import 'package:flutter_eduapp_new/data/models/svod_table_model.dart';
 import 'package:flutter_eduapp_new/pages/skill_list/widgets/skill_list_adapter.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_map/flutter_map.dart';

@@ -2,7 +2,7 @@ import 'package:flutter_eduapp_new/data/models/group_model.dart';
 
 class SpecialtyModel {
   int id;
-  GroupModel group;
+  GroupModel? group;
   String code;
   String title;
   String cType;
@@ -22,10 +22,10 @@ class SpecialtyModel {
 
   SpecialtyModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
-        group = GroupModel.fromJson(json['group']),
         code = json['code'],
         title = json['title'],
         cType = json['c_type'] {
+    json['group'] != null ? group = GroupModel.fromJson(json['group']) : null;
     prev = json['prev'];
     desc = json['desc'];
     icon = json['icon'];
@@ -34,7 +34,7 @@ class SpecialtyModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
-    data['group'] = group.toJson();
+    data['group'] = group?.toJson();
     data['code'] = code;
     data['title'] = title;
     data['c_type'] = cType;
