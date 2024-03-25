@@ -1,4 +1,3 @@
-import 'package:flutter_eduapp_new/data/models/skill_model.dart';
 import 'package:flutter_eduapp_new/data/models/svod_table.dart';
 
 import 'event_model.dart';
@@ -10,11 +9,11 @@ class EstablishmentModel {
   int id;
   List<EventModel>? eventsList;
   List<GalleryModel>? gallerysList;
-  List<SvodTable>? svodSkillsList;
-  String? title;
-  String? shortTitle;
+  List<SvodTableModel>? svodSkillsList;
+  String title;
+  String shortTitle;
   String? desc;
-  String? adress;
+  String adress;
   String? tel;
   String? email;
   String? wsite;
@@ -35,10 +34,10 @@ class EstablishmentModel {
       this.eventsList,
       this.gallerysList,
       this.svodSkillsList,
-      this.title,
-      this.shortTitle,
+      required this.title,
+      required this.shortTitle,
       this.desc,
-      this.adress,
+      required this.adress,
       this.tel,
       this.email,
       this.wsite,
@@ -54,7 +53,11 @@ class EstablishmentModel {
       this.promoMedio,
       this.coords});
 
-  EstablishmentModel.fromJson(Map<String, dynamic> json) : id = json['id'] {
+  EstablishmentModel.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        title = json['title'],
+        shortTitle = json['short_title'],
+        adress = json['adress'] {
     if (json['events'] != null) {
       eventsList = <EventModel>[];
       json['events'].forEach((v) {
@@ -68,15 +71,12 @@ class EstablishmentModel {
       });
     }
     if (json['skills'] != null) {
-      svodSkillsList = <SvodTable>[];
+      svodSkillsList = <SvodTableModel>[];
       json['skills'].forEach((v) {
-        svodSkillsList!.add(SvodTable.fromJson(v));
+        svodSkillsList!.add(SvodTableModel.fromJson(v));
       });
     }
-    title = json['title'];
-    shortTitle = json['short_title'];
     desc = json['desc'];
-    adress = json['adress'];
     tel = json['tel'];
     email = json['email'];
     wsite = json['wsite'];

@@ -1,16 +1,14 @@
 class GalleryModel {
-  int? id;
-  String? photo;
+  int id;
+  String photo;
   String? desc;
-  int? est;
 
-  GalleryModel({this.id, this.photo, this.desc, this.est});
+  GalleryModel({required this.id, required this.photo, this.desc});
 
-  GalleryModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    photo = json['photo'];
+  GalleryModel.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        photo = json['photo'] {
     desc = json['desc'];
-    est = json['est'];
   }
 
   Map<String, dynamic> toJson() {
@@ -18,7 +16,6 @@ class GalleryModel {
     data['id'] = id;
     data['photo'] = photo;
     data['desc'] = desc;
-    data['est'] = est;
     return data;
   }
 }

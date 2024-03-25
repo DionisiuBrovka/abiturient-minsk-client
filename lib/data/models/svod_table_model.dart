@@ -1,9 +1,9 @@
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
 
-class SvodTable {
+class SvodTableModel {
   int id;
   List<SkillModel>? skill;
-  String? sType;
+  String sType;
   int? bCount;
   String? bLong;
   double? bAvd;
@@ -13,31 +13,31 @@ class SvodTable {
   String? rule;
   bool? isOpfr;
   String? opfrQnic;
-  int? est;
 
-  SvodTable(
-      {required this.id,
-      this.skill,
-      this.sType,
-      this.bCount,
-      this.bLong,
-      this.bAvd,
-      this.pCount,
-      this.pLong,
-      this.pAvd,
-      this.rule,
-      this.isOpfr,
-      this.opfrQnic,
-      this.est});
+  SvodTableModel({
+    required this.id,
+    this.skill,
+    required this.sType,
+    this.bCount,
+    this.bLong,
+    this.bAvd,
+    this.pCount,
+    this.pLong,
+    this.pAvd,
+    this.rule,
+    this.isOpfr,
+    this.opfrQnic,
+  });
 
-  SvodTable.fromJson(Map<String, dynamic> json) : id = json['id'] {
+  SvodTableModel.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        sType = json['s_type'] {
     if (json['skill'] != null) {
       skill = <SkillModel>[];
       json['skill'].forEach((v) {
         skill!.add(SkillModel.fromJson(v));
       });
     }
-    sType = json['s_type'];
     bCount = json['b_count'];
     bLong = json['b_long'];
     bAvd = json['b_avd'];
@@ -47,7 +47,6 @@ class SvodTable {
     rule = json['rule'];
     isOpfr = json['is_opfr'];
     opfrQnic = json['opfr_qnic'];
-    est = json['est'];
   }
 
   Map<String, dynamic> toJson() {
@@ -66,7 +65,6 @@ class SvodTable {
     data['rule'] = rule;
     data['is_opfr'] = isOpfr;
     data['opfr_qnic'] = opfrQnic;
-    data['est'] = est;
     return data;
   }
 }

@@ -1,29 +1,28 @@
 class EventModel {
-  int? id;
-  String? eDate;
-  String? title;
+  int id;
+  String eDate; //TODO empliment DATE TYPE
+  String title;
   String? desc;
-  Null prev;
-  Null eUrl;
-  int? org;
+  String? prev;
+  String? eUrl;
 
-  EventModel(
-      {this.id,
-      this.eDate,
-      this.title,
-      this.desc,
-      this.prev,
-      this.eUrl,
-      this.org});
+  EventModel({
+    required this.id,
+    required this.eDate,
+    required this.title,
+    this.desc,
+    this.prev,
+    this.eUrl,
+  });
 
-  EventModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    eDate = json['e_date'];
+  EventModel.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        eDate = json['e_date'],
+        title = json['title'] {
     title = json['title'];
     desc = json['desc'];
     prev = json['prev'];
     eUrl = json['e_url'];
-    org = json['org'];
   }
 
   Map<String, dynamic> toJson() {
@@ -34,7 +33,7 @@ class EventModel {
     data['desc'] = desc;
     data['prev'] = prev;
     data['e_url'] = eUrl;
-    data['org'] = org;
+
     return data;
   }
 }
