@@ -100,7 +100,7 @@ class _PageFAQState extends State<PageFAQ> {
         builder: (context) {
           return AlertDialog(
             //icon: FaIcon(FontAwesomeIcons.folderMinus),
-            title: const Text("Задайте свой вопросс"),
+            title: const Text("Задайте свой вопрос"),
             content: Padding(
               padding: const EdgeInsets.all(8.0),
               child: FAQaskView(

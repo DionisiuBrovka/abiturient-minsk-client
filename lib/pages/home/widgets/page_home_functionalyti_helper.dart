@@ -72,7 +72,7 @@ class PageHomeFunctionalytiHelper extends StatelessWidget {
               ),
               FunctionalityCard(
                 icon: Icons.checklist,
-                title: "Пройти тест на профорьентацию",
+                title: "Пройти тест на профориентацию",
                 function: () {
                   launchUrl(Uri.parse('https://profitest.ripo.by/public/main'));
                 },
