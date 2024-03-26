@@ -39,13 +39,13 @@ class EstablishmentListAdapter extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        establishment.title ?? "---",
+                        establishment.title,
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Text(establishment.adress ?? "---")
+                      Text(establishment.adress)
                     ],
                   ),
                 ),

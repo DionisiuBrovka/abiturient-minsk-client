@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_eduapp_new/pages/documents_list/page_document_list.dart';
 import 'package:flutter_eduapp_new/pages/documents_schedule/page_document_schedule.dart';
 import 'package:flutter_eduapp_new/pages/establishment_list/page_establishment_list.dart';
@@ -21,10 +22,10 @@ class PageHomeFunctionalytiHelper extends StatelessWidget {
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           const Divider(),
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 8,
-            runSpacing: 8,
+          GridView.count(
+            childAspectRatio: MediaQuery.of(context).size.width > 1000 ? 3 : 2,
+            shrinkWrap: true,
+            crossAxisCount: MediaQuery.of(context).size.width > 1000 ? 3 : 2,
             children: [
               FunctionalityCard(
                 icon: Icons.account_balance,
@@ -118,26 +119,22 @@ class FunctionalityCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: 90,
-            width: 220,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                    fontWeight: FontWeight.bold),
+              )
+            ],
           ),
         ),
       ),

@@ -32,9 +32,9 @@ class SvodTableModel {
   SvodTableModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         sType = json['s_type'] {
-    if (json['skills'] != null) {
+    if (json['skill'] != null) {
       skill = <SkillModel>[];
-      json['skills'].forEach((v) {
+      json['skill'].forEach((v) {
         skill!.add(SkillModel.fromJson(v));
       });
     }

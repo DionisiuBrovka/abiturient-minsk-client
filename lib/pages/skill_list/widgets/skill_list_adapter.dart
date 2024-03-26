@@ -29,9 +29,9 @@ class SkillListAdapter extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(
-                  Icons.person,
-                  size: 40,
+                Text(
+                  skill.specialty.icon ?? "🧑‍💼",
+                  style: const TextStyle(fontSize: 65),
                 ),
                 const SizedBox(
                   width: 8,
@@ -43,18 +43,18 @@ class SkillListAdapter extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        skill.title ?? "---",
+                        skill.title,
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                       const Divider(),
                       Text(
-                        skill.specialty.title ?? "---",
+                        skill.specialty.title,
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Text(skill.code ?? "---")
+                      Text(skill.code)
                     ],
                   ),
                 ),

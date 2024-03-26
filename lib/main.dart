@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
           title: 'Абитуриент МИНСК',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xFF448AFF)),
             useMaterial3: true,
           ),
           home: const PageHome(),
