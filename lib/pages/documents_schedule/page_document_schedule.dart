@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/pages/documents_schedule/schedule_markdown_data.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
@@ -9,6 +11,7 @@ class PageDocumentSchedule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("-----==#[ BUILD PAGE - (page_document_schedule) ]#==------");
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: const Text("График работы комисии"),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
-import 'package:flutter_eduapp_new/pages/establishment_list/widgets/establishment_list_viewholder.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class SkillDetailContent extends StatelessWidget {

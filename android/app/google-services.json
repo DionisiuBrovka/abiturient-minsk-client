@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525216708103",
+    "project_id": "abiturient-minsk-analytics",
+    "storage_bucket": "abiturient-minsk-analytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525216708103:android:46082a91f310ee273ddca2",
+        "android_client_info": {
+          "package_name": "com.example.flutter_eduapp_new"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTLHutRXAdz7rfyqgNc9LopGCFqd7NdZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

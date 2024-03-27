@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/pages/documents_list/list_markdown_data.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
@@ -9,6 +11,7 @@ class PageDocumentList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("-----==#[ BUILD PAGE - (page_document_list) ]#==------");
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: const Text("Список документов"),

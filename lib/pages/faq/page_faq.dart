@@ -26,6 +26,7 @@ class _PageFAQState extends State<PageFAQ> {
 
   @override
   Widget build(BuildContext context) {
+    log("-----==#[ BUILD PAGE - (page_faq) ]#==------");
     return Scaffold(
         appBar: CustomAppBar(
           customTitle: const Text("Вопрос ответ"),

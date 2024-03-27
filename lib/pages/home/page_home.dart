@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
@@ -14,6 +17,9 @@ class PageHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("-----==#[ BUILD PAGE - (page_home) ]#==------");
+    FirebaseAnalytics.instance.logScreenView(
+        screenClass: "page_class_functional", screenName: "page_home");
     return Scaffold(
         appBar: CustomAppBar(
           customTitle: const Text("Главная страница"),

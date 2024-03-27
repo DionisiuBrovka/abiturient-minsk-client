@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,6 +13,7 @@ class PageDocumentDeadline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("-----==#[ BUILD PAGE - (page_document_deadline) ]#==------");
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: const Text("Сроки подачи документов"),

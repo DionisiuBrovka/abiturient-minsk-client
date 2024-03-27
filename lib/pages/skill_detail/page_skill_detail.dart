@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
@@ -14,6 +16,7 @@ class PageSkillDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("-----==#[ BUILD PAGE - (page_skill_detail №$id ) ]#==------");
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: const Text("Специальность"),
