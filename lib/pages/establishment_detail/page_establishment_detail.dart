@@ -24,28 +24,27 @@ class PageEstablishmentDetail extends StatelessWidget {
           return BlocProvider<EstablishmentDetailBloc>(
             create: (context) => EstablishmentDetailBloc()
               ..add(LoadEstablishmentDetailEvent(id)),
-            child: Center(
-              child: BlocBuilder<EstablishmentDetailBloc,
-                  EstablishmentDetailState>(builder: (context, state) {
-                if (state is EstablishmentDetailLoadingState) {
-                  return const CircularProgressIndicator();
-                } else if (state is EstablishmentDetailSucsesState) {
-                  return ListView(
-                    shrinkWrap: true,
-                    children: [
-                      EstablishmentDetailTitle(
-                        establishment: state.establishment,
-                      ),
-                      EstablishmentDetailContent(
-                        state: state,
-                      ),
-                    ],
-                  );
-                } else {
-                  return const Text("ERROR");
-                }
-              }),
-            ),
+            child:
+                BlocBuilder<EstablishmentDetailBloc, EstablishmentDetailState>(
+                    builder: (context, state) {
+              if (state is EstablishmentDetailLoadingState) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (state is EstablishmentDetailSucsesState) {
+                return ListView(
+                  shrinkWrap: true,
+                  children: [
+                    EstablishmentDetailTitle(
+                      establishment: state.establishment,
+                    ),
+                    EstablishmentDetailContent(
+                      state: state,
+                    ),
+                  ],
+                );
+              } else {
+                return const Text("ERROR");
+              }
+            }),
           );
         } else {
           return const NoNetworkPlaceholder();

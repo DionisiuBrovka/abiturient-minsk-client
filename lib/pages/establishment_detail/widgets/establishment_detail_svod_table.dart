@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_eduapp_new/data/models/svod_table_model.dart';
+import 'package:flutter_eduapp_new/pages/skill_detail/page_skill_detail.dart';
 
 class EstablishmentDetailSvodTable extends StatelessWidget {
   final List<SvodTableModel> svodTable;
@@ -151,18 +153,39 @@ class TableRowBodyCellSpecial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: Card(
-        elevation: 2,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            svodTable.skill!.first.title,
-            style: const TextStyle(fontSize: 14),
+    return Column(
+      children: svodTable.skill!.map((e) {
+        return Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Card(
+            elevation: 2,
+            child: InkWell(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              hoverColor: const Color.fromARGB(255, 207, 226, 255),
+              focusColor: const Color.fromARGB(255, 176, 207, 255),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => PageSkillDetail(
+                        id: e.id,
+                      ))),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        svodTable.skill!.first.title,
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                    ),
+                    const Icon(Icons.arrow_forward_ios)
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      }).toList(),
     );
   }
 }

@@ -31,12 +31,12 @@ class PageSkillList extends StatelessWidget {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Image.asset(
-                          "assets/fon.jpg",
-                          fit: BoxFit.cover,
-                          height: 150,
-                          width: double.infinity,
-                        ),
+                        // Image.asset(
+                        //   "assets/fon.jpg",
+                        //   fit: BoxFit.cover,
+                        //   height: 150,
+                        //   width: double.infinity,
+                        // ),
                         Expanded(
                           child: SizedBox(
                             width: 1000,

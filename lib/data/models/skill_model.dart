@@ -7,6 +7,9 @@ class SkillModel {
   String title;
   String? searchtag;
   String? desc;
+  String? descHardskills;
+  String? descWork;
+  String? descSoftskills;
   String? photo;
 
   SkillModel(
@@ -16,6 +19,9 @@ class SkillModel {
       required this.title,
       this.searchtag,
       this.desc,
+      this.descHardskills,
+      this.descWork,
+      this.descSoftskills,
       this.photo});
 
   SkillModel.fromJson(Map<String, dynamic> json)
@@ -25,6 +31,9 @@ class SkillModel {
         title = json['title'] {
     searchtag = json['searchtag'];
     desc = json['desc'];
+    descHardskills = json['desc_hardskills'];
+    descWork = json['desc_work'];
+    descSoftskills = json['desc_softskills'];
     photo = json['photo'];
   }
 

@@ -9,7 +9,15 @@ class PageHomeDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: MarkdownBody(data: HOME_MARKDOWN_DATA),
+      child: MarkdownBody(
+        data: HOME_MARKDOWN_DATA,
+        styleSheet: MarkdownStyleSheet(
+          textAlign: WrapAlignment.spaceBetween,
+          orderedListAlign: WrapAlignment.spaceBetween,
+          unorderedListAlign: WrapAlignment.spaceBetween,
+          p: const TextStyle(fontSize: 16),
+        ),
+      ),
     );
   }
 }

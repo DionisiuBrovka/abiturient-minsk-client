@@ -11,7 +11,7 @@ class EstablishmentDetailTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.topLeft, children: [
       Image.asset(
-        "assets/fon_alt.jpg",
+        "assets/fon_main_clean.png",
         fit: BoxFit.cover,
         height: 150,
         width: double.infinity,
