@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/data/models/establishment_model.dart';
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
-import 'package:flutter_eduapp_new/pages/establishment_list/widgets/establishment_list_viewholder.dart';
 import 'package:flutter_eduapp_new/pages/skill_detail/widgets/establishment_list_viewholder_no_scroll.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
@@ -47,7 +46,13 @@ class SkillDetailContent extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                     color: const Color.fromARGB(255, 51, 78, 165)),
               ),
-              Text(skill.specialty.title),
+              Text(
+                skill.specialty.title,
+                style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.width > 750 ? 30 : 20,
+                    fontWeight: FontWeight.normal,
+                    color: const Color.fromARGB(255, 0, 132, 194)),
+              ),
               const Divider(),
               MarkdownBody(
                 data: skill.desc ?? "",

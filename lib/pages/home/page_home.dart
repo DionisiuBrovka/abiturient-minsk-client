@@ -48,7 +48,7 @@ class PageHome extends StatelessWidget {
                         PageHomeFunctionalytiHelper(),
                         PageHomeBanners(),
                         SizedBox(
-                          height: 32,
+                          height: 16,
                         ),
                         Padding(
                           padding: EdgeInsets.all(8.0),
@@ -61,8 +61,10 @@ class PageHome extends StatelessWidget {
                                 SizedBox(
                                   width: 16,
                                 ),
-                                Text(
-                                    "Для корректной работы приложения, отключите блокировщик рекламы")
+                                Expanded(
+                                  child: Text(
+                                      "Для корректной работы приложения, отключите блокировщик рекламы"),
+                                )
                               ],
                             ),
                           )),
