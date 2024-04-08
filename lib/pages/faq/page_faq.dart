@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/faq/bloc/faq_bloc.dart';
@@ -27,6 +28,10 @@ class _PageFAQState extends State<PageFAQ> {
   @override
   Widget build(BuildContext context) {
     log("-----==#[ BUILD PAGE - (page_faq) ]#==------");
+    FirebaseAnalytics.instance.logScreenView(
+        screenClass: "page_class_functional",
+        screenName: "page_faq",
+        parameters: {"page_title": "Вопрос ответ"});
     return Scaffold(
         appBar: CustomAppBar(
           customTitle: const Text("Вопрос ответ"),
@@ -45,7 +50,7 @@ class _PageFAQState extends State<PageFAQ> {
                     return Column(
                       children: [
                         Image.asset(
-                          "assets/fon.jpg",
+                          "assets/faq-back.jpg",
                           fit: BoxFit.cover,
                           height: 150,
                           width: double.infinity,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/data/models/faq_model.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class FAQViewholder extends StatefulWidget {
   final List<FAQModel> faqList;
@@ -41,7 +42,14 @@ class _FAQViewholderState extends State<FAQViewholder> {
                     const Divider(),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(faqItem.anser ?? ''),
+                      child: MarkdownBody(
+                          data: faqItem.anser ?? '',
+                          styleSheet: MarkdownStyleSheet(
+                            textAlign: WrapAlignment.spaceBetween,
+                            orderedListAlign: WrapAlignment.spaceBetween,
+                            unorderedListAlign: WrapAlignment.spaceBetween,
+                            p: const TextStyle(fontSize: 16),
+                          )),
                     )
                   ],
                 ),

@@ -19,6 +19,24 @@ class EstablishmentRepository {
       for (Map<String, dynamic> index in data) {
         result.add(EstablishmentModel.fromJson(index));
       }
+
+      result.sort((a, b) => a.title.compareTo(b.title)); //fix
+    }
+    return result.reversed.toList(); //fix
+  }
+
+  static Future<List<EstablishmentModel>> getListForSkill(int id) async {
+    List<EstablishmentModel> result = [];
+
+    await Future.delayed(const Duration(seconds: 1));
+
+    final response = await http.get(Uri.parse('$API_ROOT/v1/skill/$id/est/'));
+    var data = jsonDecode(utf8.decode(response.bodyBytes));
+
+    if (response.statusCode == 200) {
+      for (Map<String, dynamic> index in data) {
+        result.add(EstablishmentModel.fromJson(index));
+      }
     }
     return result;
   }

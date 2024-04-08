@@ -20,7 +20,7 @@ class SkillListBloc extends Bloc<SkillListEvent, SkillListState> {
       emit(SkillListLoadingState());
       try {
         List<SkillModel> skillsList = await SkillRepository.getList();
-        skillsList.sort((a, b) => a.code!.compareTo(b.code!));
+        skillsList.sort((a, b) => a.code.compareTo(b.code));
         emit(SkillListSucsessState(
             skillsList: skillsList, skillsListFiltered: skillsList));
       } catch (e) {
@@ -33,7 +33,7 @@ class SkillListBloc extends Bloc<SkillListEvent, SkillListState> {
       emit(SkillListSucsessState(
           skillsList: event.skillsList,
           skillsListFiltered: event.skillsList.where((element) {
-            if (element.specialty?.cType == "ССО") {
+            if (element.specialty.cType == "ССО") {
               return true;
             } else {
               return false;
@@ -45,7 +45,7 @@ class SkillListBloc extends Bloc<SkillListEvent, SkillListState> {
       emit(SkillListSucsessState(
           skillsList: event.skillsList,
           skillsListFiltered: event.skillsList.where((element) {
-            if (element.specialty?.cType == "ПТО") {
+            if (element.specialty.cType == "ПТО") {
               return true;
             } else {
               return false;

@@ -36,7 +36,7 @@ class EstablishmentListBloc
       emit(EstablishmentListSucsessState(
           establishmentList: event.establishmentList,
           establishmentListFiltered: event.establishmentList
-              .where((element) => element.title!
+              .where((element) => element.title
                   .toLowerCase()
                   .contains(event.query.toLowerCase()))
               .toList()));

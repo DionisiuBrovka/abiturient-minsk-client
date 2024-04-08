@@ -29,7 +29,7 @@ class EstablishmentDetailMap extends StatelessWidget {
                     initialCenter: LatLng(
                         double.parse(establishment.coords!.split(', ')[0]),
                         double.parse(establishment.coords!.split(', ')[1])),
-                    initialZoom: 13,
+                    initialZoom: 15,
                     cameraConstraint: CameraConstraint.contain(
                       bounds: LatLngBounds(
                         const LatLng(-90, -180),

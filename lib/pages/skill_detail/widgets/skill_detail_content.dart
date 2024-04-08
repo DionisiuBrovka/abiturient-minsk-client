@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_eduapp_new/data/models/establishment_model.dart';
 import 'package:flutter_eduapp_new/data/models/skill_model.dart';
+import 'package:flutter_eduapp_new/pages/establishment_list/widgets/establishment_list_viewholder.dart';
+import 'package:flutter_eduapp_new/pages/skill_detail/widgets/establishment_list_viewholder_no_scroll.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class SkillDetailContent extends StatelessWidget {
   final SkillModel skill;
+  final List<EstablishmentModel> establishmentsForSkill;
 
-  const SkillDetailContent({super.key, required this.skill});
+  const SkillDetailContent(
+      {super.key, required this.skill, required this.establishmentsForSkill});
 
   @override
   Widget build(BuildContext context) {
@@ -25,23 +30,24 @@ class SkillDetailContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 16,
+                height: 8,
               ),
               Text(
                 skill.code,
-                style: const TextStyle(
-                    fontSize: 75,
+                style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.width > 750 ? 70 : 45,
                     fontWeight: FontWeight.bold,
                     height: 0.8,
-                    color: Color.fromARGB(255, 0, 21, 90)),
+                    color: const Color.fromARGB(255, 0, 21, 90)),
               ),
               Text(
                 skill.title,
-                style: const TextStyle(
-                    fontSize: 45,
+                style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.width > 750 ? 45 : 28,
                     fontWeight: FontWeight.normal,
-                    color: Color.fromARGB(255, 51, 78, 165)),
+                    color: const Color.fromARGB(255, 51, 78, 165)),
               ),
+              Text(skill.specialty.title),
               const Divider(),
               MarkdownBody(
                 data: skill.desc ?? "",
@@ -51,7 +57,7 @@ class SkillDetailContent extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                "Вы получите навыки по:",
+                "Вы получите навыки:",
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const Divider(),
@@ -88,10 +94,12 @@ class SkillDetailContent extends StatelessWidget {
               ),
               // EstablishmentListViewholder(establishments: skill.),
               Text(
-                "Где вы можете получить проффесию:",
+                "Где вы можете получить профессию:",
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const Divider(),
+              EstablishmentListViewholderNoScroll(
+                  establishments: establishmentsForSkill),
               const SizedBox(
                 height: 200,
               ),

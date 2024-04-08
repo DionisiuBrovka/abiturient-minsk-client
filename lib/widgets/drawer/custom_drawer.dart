@@ -90,7 +90,7 @@ class CustomDrawer extends StatelessWidget {
                 children: [
                   const Divider(),
                   const Text(
-                      "Приложение разработано для Минского коммитета по образованию."),
+                      "Приложение разработано для комитета по образованию Мингорисполкома."),
                   const Text("Разработал Бровка Д.С."),
                   //TODO
                 ]);

@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eduapp_new/pages/documents_list/list_markdown_data.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
@@ -12,6 +13,10 @@ class PageDocumentList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log("-----==#[ BUILD PAGE - (page_document_list) ]#==------");
+    FirebaseAnalytics.instance.logScreenView(
+        screenClass: "page_class_documents",
+        screenName: "page_document_list",
+        parameters: {"page_title": "Список документов"});
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: const Text("Список документов"),

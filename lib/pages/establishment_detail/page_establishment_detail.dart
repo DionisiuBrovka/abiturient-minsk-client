@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,6 +19,10 @@ class PageEstablishmentDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log("-----==#[ BUILD PAGE - (page_establishment_detail №$id) ]#==------");
+    FirebaseAnalytics.instance.logScreenView(
+        screenClass: "page_class_functional",
+        screenName: "page_establishment_detail_$id",
+        parameters: {"page_title": "Колледж №$id"});
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: Text("Учреждение образования #$id"),

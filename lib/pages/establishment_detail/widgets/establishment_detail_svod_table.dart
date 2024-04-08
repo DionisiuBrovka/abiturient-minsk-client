@@ -27,7 +27,7 @@ class EstablishmentDetailSvodTable extends StatelessWidget {
                       TableCellVerticalAlignment.intrinsicHeight,
                   columnWidths: const <int, TableColumnWidth>{
                     0: IntrinsicColumnWidth(),
-                    1: FixedColumnWidth(300),
+                    1: FixedColumnWidth(425),
                     2: FixedColumnWidth(175),
                     3: FixedColumnWidth(200),
                     4: FixedColumnWidth(200),
@@ -35,6 +35,7 @@ class EstablishmentDetailSvodTable extends StatelessWidget {
                     6: FixedColumnWidth(200),
                     7: IntrinsicColumnWidth(),
                     8: FixedColumnWidth(200),
+                    9: IntrinsicColumnWidth(),
                   },
                   border: TableBorder.all(
                       width: 1, color: const Color.fromARGB(50, 0, 0, 0)),
@@ -42,6 +43,32 @@ class EstablishmentDetailSvodTable extends StatelessWidget {
                       generateSvodTableRows(svodTable),
                 ),
               )),
+          Card(
+            color: Theme.of(context).primaryColor,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.info_sharp,
+                    size: 40,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Для горизантального перемещение по таблице используйте сочитание клавиш Shift + колесико мышки или курсор",
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       );
     } else {
@@ -66,6 +93,7 @@ List<TableRow> generateSvodTableHead() {
           TableRowHeadCell(title: "Проходной балл платное"),
           TableRowHeadCell(title: "Правила приема"),
           TableRowHeadCell(title: "Ведется ли набор лиц с ОПФР"),
+          TableRowHeadCell(title: "Правила набора лиц с ОПФР"),
         ])
   ];
 }
@@ -139,6 +167,9 @@ List<TableRow> generateSvodTableRows(List<SvodTableModel> svodTable) {
                     color: Colors.red[400],
                   ),
           ),
+          TableRowBodyCell(
+            title: e.opfrQnic ?? "---",
+          ),
         ]);
   }).toList();
 }
@@ -173,11 +204,27 @@ class TableRowBodyCellSpecial extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(
-                      child: Text(
-                        svodTable.skill!.first.title,
-                        style: const TextStyle(fontSize: 14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            e.title,
+                            style: const TextStyle(fontSize: 14),
+                          ),
+                          const Divider(),
+                          Text(
+                            e.specialty.title,
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge
+                                ?.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          Text(e.code)
+                        ],
                       ),
                     ),
+                    Text(e.specialty.cType),
                     const Icon(Icons.arrow_forward_ios)
                   ],
                 ),

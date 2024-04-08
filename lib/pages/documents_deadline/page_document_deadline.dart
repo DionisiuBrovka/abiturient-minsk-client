@@ -1,8 +1,7 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_eduapp_new/pages/documents_deadline/deadline_markdown_data.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_eduapp_new/widgets/drawer/custom_drawer.dart';
@@ -14,6 +13,10 @@ class PageDocumentDeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log("-----==#[ BUILD PAGE - (page_document_deadline) ]#==------");
+    FirebaseAnalytics.instance.logScreenView(
+        screenClass: "page_class_documents",
+        screenName: "page_document_deadline",
+        parameters: {"page_title": "Сроки подачи документов"});
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: const Text("Сроки подачи документов"),

@@ -7,12 +7,15 @@ import 'package:flutter_eduapp_new/firebase_options.dart';
 import 'package:flutter_eduapp_new/pages/home/page_home.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() async {
+Future<void> main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   Bloc.observer = SimpleBlocObserver();
+
   runApp(const MyApp());
 }
 
@@ -22,7 +25,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseAnalytics.instance.logAppOpen();
-
     return MultiBlocProvider(
         providers: [
           BlocProvider<NetworkBloc>(

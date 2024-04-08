@@ -29,12 +29,10 @@ class SkillListAdapter extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  skill.specialty.icon ?? "👩‍🔧",
-                  style: const TextStyle(fontSize: 50),
+                const Icon(
+                  Icons.person,
+                  size: 55,
                 ),
-                // Image.network(
-                //     "https://emoji.aranja.com/static/emoji-data/img-apple-160/1f469-200d-1f33e.png"),
                 const SizedBox(
                   width: 8,
                 ),

@@ -23,9 +23,10 @@ class PageHomeFunctionalytiHelper extends StatelessWidget {
           ),
           const Divider(),
           GridView.count(
-            childAspectRatio: MediaQuery.of(context).size.width > 1000 ? 3 : 2,
+            childAspectRatio: MediaQuery.of(context).size.width > 900 ? 3 : 2,
             shrinkWrap: true,
-            crossAxisCount: MediaQuery.of(context).size.width > 1000 ? 3 : 2,
+            crossAxisCount: MediaQuery.of(context).size.width > 750 ? 3 : 2,
+            controller: ScrollController(keepScrollOffset: false),
             children: [
               FunctionalityCard(
                 icon: Icons.account_balance,
@@ -62,7 +63,7 @@ class PageHomeFunctionalytiHelper extends StatelessWidget {
               ),
               FunctionalityCard(
                 icon: Icons.description_rounded,
-                title: "Какие документы нужны для поступления",
+                title: "Определить документы необходимые для поступления",
                 function: () {
                   Navigator.pushReplacement(
                       context,
@@ -80,7 +81,7 @@ class PageHomeFunctionalytiHelper extends StatelessWidget {
               ),
               FunctionalityCard(
                 icon: Icons.question_answer,
-                title: "Или задать интересующий вас вопрос",
+                title: "Задать интересующий вас вопрос",
                 function: () {
                   Navigator.pushReplacement(
                       context,
@@ -131,6 +132,7 @@ class FunctionalityCard extends StatelessWidget {
                 title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.width > 500 ? 14 : 12,
                     color: Theme.of(context).colorScheme.onPrimary,
                     fontWeight: FontWeight.bold),
               )

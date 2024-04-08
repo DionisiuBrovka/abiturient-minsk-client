@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_eduapp_new/bloc/internet/bloc/network_bloc.dart';
@@ -17,6 +18,10 @@ class PageSkillDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log("-----==#[ BUILD PAGE - (page_skill_detail №$id ) ]#==------");
+    FirebaseAnalytics.instance.logScreenView(
+        screenClass: "page_class_functional",
+        screenName: "page_skill_detail_$id",
+        parameters: {"page_title": "Квалификация №$id"});
     return Scaffold(
       appBar: CustomAppBar(
         customTitle: const Text("Специальность"),
@@ -39,6 +44,7 @@ class PageSkillDetail extends StatelessWidget {
                     ),
                     SkillDetailContent(
                       skill: state.skill,
+                      establishmentsForSkill: state.establishmentsForSkill,
                     ),
                   ],
                 );

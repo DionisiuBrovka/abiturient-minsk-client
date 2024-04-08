@@ -60,13 +60,12 @@ class EstablishmentDetailTitle extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(top: 150.0),
-                    child: Text(
-                      establishment.title,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineLarge!
-                          .copyWith(fontWeight: FontWeight.bold),
-                    ),
+                    child: Text(establishment.title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: MediaQuery.of(context).size.width > 750
+                                ? 40
+                                : 28)),
                   ),
                 ),
               ],

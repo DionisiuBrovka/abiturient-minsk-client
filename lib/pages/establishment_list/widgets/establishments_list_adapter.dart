@@ -26,7 +26,7 @@ class EstablishmentListAdapter extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Icon(
-                  Icons.home,
+                  Icons.account_balance,
                   size: 40,
                 ),
                 const SizedBox(

@@ -11,11 +11,11 @@ class PageHomePlatformSelect extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            "Так же наше приложение доступно на разных платформах:",
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const Divider(),
+          // Text(
+          //   "Так же наше приложение доступно на разных платформах:",
+          //   style: Theme.of(context).textTheme.headlineSmall,
+          // ),
+          // const Divider(),
           Wrap(
             alignment: WrapAlignment.center,
             spacing: 8,
@@ -33,10 +33,10 @@ class PageHomePlatformSelect extends StatelessWidget {
                   onPressed: () {},
                   icon: const Icon(FontAwesomeIcons.android),
                   label: const Text("Android")),
-              FilledButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(FontAwesomeIcons.appStoreIos),
-                  label: const Text("IOS")),
+              // FilledButton.icon(
+              //     onPressed: () {},
+              //     icon: const Icon(FontAwesomeIcons.appStoreIos),
+              //     label: const Text("IOS")),
             ],
           ),
         ],

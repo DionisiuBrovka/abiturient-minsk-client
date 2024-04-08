@@ -126,6 +126,7 @@ class ContactGrid extends StatelessWidget {
       shrinkWrap: true,
       childAspectRatio: 2,
       crossAxisCount: MediaQuery.of(context).size.width > 1000 ? 4 : 2,
+      controller: ScrollController(keepScrollOffset: false),
       children: children.nonNulls.toList(),
     );
   }
