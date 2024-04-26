@@ -8,8 +8,6 @@ class FAQRepository {
   static Future<List<FAQModel>> getList() async {
     List<FAQModel> result = [];
 
-    await Future.delayed(const Duration(seconds: 1));
-
     final response = await http.get(Uri.parse('$API_ROOT$API_VER/faq/'));
     var data = jsonDecode(utf8.decode(response.bodyBytes));
 

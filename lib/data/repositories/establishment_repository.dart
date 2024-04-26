@@ -9,8 +9,6 @@ class EstablishmentRepository {
   static Future<List<EstablishmentModel>> getList() async {
     List<EstablishmentModel> result = [];
 
-    await Future.delayed(const Duration(seconds: 1));
-
     final response =
         await http.get(Uri.parse('$API_ROOT$API_VER/establishment/'));
     var data = jsonDecode(utf8.decode(response.bodyBytes));
@@ -27,8 +25,6 @@ class EstablishmentRepository {
 
   static Future<List<EstablishmentModel>> getListForSkill(int id) async {
     List<EstablishmentModel> result = [];
-
-    await Future.delayed(const Duration(seconds: 1));
 
     final response = await http.get(Uri.parse('$API_ROOT/v1/skill/$id/est/'));
     var data = jsonDecode(utf8.decode(response.bodyBytes));

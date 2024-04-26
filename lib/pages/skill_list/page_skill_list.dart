@@ -24,7 +24,7 @@ class PageSkillList extends StatelessWidget {
         parameters: {"page_title": "Список квалификаций"});
     return Scaffold(
         appBar: CustomAppBar(
-          customTitle: const Text("Специальности"),
+          customTitle: const Text("Специальности (квалификации)"),
         ),
         body: BlocBuilder<NetworkBloc, NetworkState>(builder: (context, state) {
           if (state is NetworkSuccess) {

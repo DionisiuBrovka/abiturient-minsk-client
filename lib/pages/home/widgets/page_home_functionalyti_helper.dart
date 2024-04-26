@@ -41,7 +41,7 @@ class PageHomeFunctionalytiHelper extends StatelessWidget {
               ),
               FunctionalityCard(
                 icon: Icons.person,
-                title: "Выбрать специальность",
+                title: "Выбрать специальность (квалификацию)",
                 function: () {
                   Navigator.pushReplacement(
                       context,
@@ -51,8 +51,8 @@ class PageHomeFunctionalytiHelper extends StatelessWidget {
                 },
               ),
               FunctionalityCard(
-                icon: Icons.description_rounded,
-                title: "Узнать график работы приемной комисии",
+                icon: Icons.info_outline,
+                title: "Приемная кампания",
                 function: () {
                   Navigator.pushReplacement(
                       context,

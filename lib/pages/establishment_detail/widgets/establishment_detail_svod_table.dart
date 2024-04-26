@@ -33,7 +33,7 @@ class EstablishmentDetailSvodTable extends StatelessWidget {
                     4: FixedColumnWidth(200),
                     5: FixedColumnWidth(200),
                     6: FixedColumnWidth(200),
-                    7: IntrinsicColumnWidth(),
+                    7: FixedColumnWidth(200),
                     8: FixedColumnWidth(200),
                     9: IntrinsicColumnWidth(),
                   },
@@ -129,7 +129,8 @@ List<TableRow> generateSvodTableRows(List<SvodTableModel> svodTable) {
           ),
           TableRowBodyCellSpecial(svodTable: e),
           TableRowBodyCell(
-            title: e.sType == "9" ? "9 класса" : "11 класса",
+            isExpanded: true,
+            title: baseTitle(e.sType),
           ),
           TableRowBodyCell(
             title: e.bCount?.toString() ?? "---",
@@ -152,6 +153,7 @@ List<TableRow> generateSvodTableRows(List<SvodTableModel> svodTable) {
             isBold: true,
           ),
           TableRowBodyCell(
+            isExpanded: true,
             title: e.rule ?? "не указано ",
           ),
           TableRowBodyCell(
@@ -172,6 +174,31 @@ List<TableRow> generateSvodTableRows(List<SvodTableModel> svodTable) {
           ),
         ]);
   }).toList();
+}
+
+String baseTitle(String base) {
+  String result;
+  switch (base) {
+    case "9":
+      result = "На основе общего базового образования (после 9 кл.)";
+      break;
+
+    case "11":
+      result = "На основе общего среднего образования (после 11 кл.)";
+      break;
+
+    case "ПТО":
+      result = "На основе ПТО";
+      break;
+
+    case "Спец":
+      result = "На основе специального образования";
+      break;
+
+    default:
+      result = "---";
+  }
+  return result;
 }
 
 class TableRowBodyCellSpecial extends StatelessWidget {
@@ -210,16 +237,12 @@ class TableRowBodyCellSpecial extends StatelessWidget {
                         children: [
                           Text(
                             e.title,
-                            style: const TextStyle(fontSize: 14),
+                            style: const TextStyle(fontSize: 14)
+                                .copyWith(fontWeight: FontWeight.bold),
                           ),
                           const Divider(),
-                          Text(
-                            e.specialty.title,
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge
-                                ?.copyWith(fontWeight: FontWeight.bold),
-                          ),
+                          Text(e.specialty.title,
+                              style: Theme.of(context).textTheme.labelLarge),
                           Text(e.code)
                         ],
                       ),
@@ -241,6 +264,7 @@ class TableRowBodyCell extends StatelessWidget {
   final String title;
   final bool isCenter;
   final bool isBold;
+  final bool isExpanded;
   final Icon? icon;
 
   const TableRowBodyCell(
@@ -248,6 +272,7 @@ class TableRowBodyCell extends StatelessWidget {
       required this.title,
       this.isCenter = false,
       this.isBold = false,
+      this.isExpanded = false,
       this.icon});
 
   @override
@@ -260,12 +285,22 @@ class TableRowBodyCell extends StatelessWidget {
         mainAxisAlignment:
             isCenter ? MainAxisAlignment.center : MainAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: TextStyle(
-                fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
-                fontSize: 14),
-          ),
+          isExpanded
+              ? Expanded(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                        fontWeight:
+                            isBold ? FontWeight.bold : FontWeight.normal,
+                        fontSize: 14),
+                  ),
+                )
+              : Text(
+                  title,
+                  style: TextStyle(
+                      fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+                      fontSize: 14),
+                ),
           const SizedBox(
             width: 4,
           ),

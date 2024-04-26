@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_eduapp_new/pages/documents_deadline/page_document_deadline.dart';
 import 'package:flutter_eduapp_new/pages/documents_list/page_document_list.dart';
 import 'package:flutter_eduapp_new/pages/documents_schedule/page_document_schedule.dart';
 import 'package:flutter_eduapp_new/pages/establishment_list/page_establishment_list.dart';
@@ -17,6 +16,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return NavigationDrawer(
       selectedIndex: selectedIndex,
+      elevation: 5,
       onDestinationSelected: (int selected) {
         switch (selected) {
           case 0:
@@ -58,18 +58,10 @@ class CustomDrawer extends StatelessWidget {
             break;
 
           case 5:
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const PageDocumentDeadline(),
-                ));
-            break;
-
-          case 6:
             launchUrl(Uri.parse('https://profitest.ripo.by/public/main'));
             break;
 
-          case 7:
+          case 6:
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -77,7 +69,7 @@ class CustomDrawer extends StatelessWidget {
                 ));
             break;
 
-          case 8:
+          case 7:
             showAboutDialog(
                 context: context,
                 applicationName: "Абитуриент Минск",
@@ -109,7 +101,7 @@ class CustomDrawer extends StatelessWidget {
       children: const [
         UserAccountsDrawerHeader(
             accountName: Text("Абитуриент МИНСК"),
-            accountEmail: Text("приложения для помощи выбора будущего"),
+            accountEmail: Text("приложения для помощи выбора профессии"),
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
@@ -121,19 +113,20 @@ class CustomDrawer extends StatelessWidget {
         NavigationDrawerDestination(
             icon: Icon(Icons.account_balance), label: Text("Колледжи")),
         NavigationDrawerDestination(
-            icon: Icon(Icons.person), label: Text("Специальности")),
+            icon: Icon(Icons.person),
+            label: Text("Специальности (квалификации)")),
         // NavigationDrawerDestination(
         //     icon: Icon(Icons.calendar_month), label: Text("Мероприятия")),
         Divider(),
         NavigationDrawerDestination(
             icon: Icon(Icons.description_rounded),
-            label: Text("График работы комисии")),
+            label: Text("Приемная кампания")),
         NavigationDrawerDestination(
             icon: Icon(Icons.description_rounded),
             label: Text("Документы для поступления")),
-        NavigationDrawerDestination(
-            icon: Icon(Icons.description_rounded),
-            label: Text("Сроки подачи документов")),
+        // NavigationDrawerDestination(
+        //     icon: Icon(Icons.description_rounded),
+        //     label: Text("Сроки подачи документов")),
         NavigationDrawerDestination(
             icon: Icon(Icons.checklist),
             label: Text("Профориентационный тест")),

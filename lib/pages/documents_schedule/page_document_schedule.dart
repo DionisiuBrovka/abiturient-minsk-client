@@ -19,7 +19,7 @@ class PageDocumentSchedule extends StatelessWidget {
         parameters: {"page_title": "Графики работы комисии"});
     return Scaffold(
       appBar: CustomAppBar(
-        customTitle: const Text("График работы комисии"),
+        customTitle: const Text("Приемная кампания"),
       ),
       body: ListView(
         shrinkWrap: true,

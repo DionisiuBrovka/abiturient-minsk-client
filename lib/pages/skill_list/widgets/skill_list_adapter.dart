@@ -44,16 +44,14 @@ class SkillListAdapter extends StatelessWidget {
                     children: [
                       Text(
                         skill.title,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      const Divider(),
-                      Text(
-                        skill.specialty.title,
                         style: Theme.of(context)
                             .textTheme
-                            .labelLarge
+                            .titleMedium
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
+                      const Divider(),
+                      Text(skill.specialty.title,
+                          style: Theme.of(context).textTheme.labelLarge),
                       Text(skill.code)
                     ],
                   ),

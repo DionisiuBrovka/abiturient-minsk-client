@@ -62,7 +62,7 @@ class SkillDetailContent extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                "Вы получите навыки:",
+                "Вы получите навыки по:",
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const Divider(),
