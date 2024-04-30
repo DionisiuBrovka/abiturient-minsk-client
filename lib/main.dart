@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Абитуриент МИНСК',
           debugShowCheckedModeBanner: false,
+          locale: const Locale('ru'),
           theme: ThemeData(
             colorScheme:
                 ColorScheme.fromSeed(seedColor: const Color(0xFF448AFF)),

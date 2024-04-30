@@ -23,6 +23,11 @@ class PageHome extends StatelessWidget {
         screenClass: "page_class_functional",
         screenName: "page_home",
         parameters: {"page_title": "Главная страница"});
+
+    const customDrawer = CustomDrawer(
+      selectedIndex: 0,
+    );
+
     return Scaffold(
         appBar: CustomAppBar(
           customTitle: const Text("Главная страница"),
@@ -80,8 +85,6 @@ class PageHome extends StatelessWidget {
             return const NoNetworkPlaceholder();
           }
         }),
-        drawer: const CustomDrawer(
-          selectedIndex: 0,
-        ));
+        drawer: customDrawer);
   }
 }

@@ -23,7 +23,7 @@ class CustomDrawer extends StatelessWidget {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const PageHome(),
+                  builder: (context) => PageHome(),
                 ));
             break;
           case 1:

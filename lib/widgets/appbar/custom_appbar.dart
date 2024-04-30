@@ -9,5 +9,15 @@ class CustomAppBar extends AppBar {
           title: customTitle,
           backgroundColor: const Color.fromARGB(255, 41, 83, 199),
           foregroundColor: Colors.white,
+          // leading: Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: Center(
+          //     child: IconButton.filled(
+          //       onPressed: () {},
+          //       icon: const Icon(Icons.menu),
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // )
         );
 }

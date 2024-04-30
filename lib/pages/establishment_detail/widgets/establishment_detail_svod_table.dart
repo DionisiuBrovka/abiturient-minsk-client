@@ -18,31 +18,6 @@ class EstablishmentDetailSvodTable extends StatelessWidget {
             "План набора на 2024/2025",
             style: Theme.of(context).textTheme.headlineSmall,
           ),
-          SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Table(
-                  defaultVerticalAlignment:
-                      TableCellVerticalAlignment.intrinsicHeight,
-                  columnWidths: const <int, TableColumnWidth>{
-                    0: IntrinsicColumnWidth(),
-                    1: FixedColumnWidth(425),
-                    2: FixedColumnWidth(175),
-                    3: FixedColumnWidth(200),
-                    4: FixedColumnWidth(200),
-                    5: FixedColumnWidth(200),
-                    6: FixedColumnWidth(200),
-                    7: FixedColumnWidth(200),
-                    8: FixedColumnWidth(200),
-                    9: IntrinsicColumnWidth(),
-                  },
-                  border: TableBorder.all(
-                      width: 1, color: const Color.fromARGB(50, 0, 0, 0)),
-                  children: generateSvodTableHead() +
-                      generateSvodTableRows(svodTable),
-                ),
-              )),
           Card(
             color: Theme.of(context).primaryColor,
             child: Padding(
@@ -68,7 +43,32 @@ class EstablishmentDetailSvodTable extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Table(
+                  defaultVerticalAlignment:
+                      TableCellVerticalAlignment.intrinsicHeight,
+                  columnWidths: const <int, TableColumnWidth>{
+                    0: IntrinsicColumnWidth(),
+                    1: FixedColumnWidth(425),
+                    2: FixedColumnWidth(175),
+                    3: FixedColumnWidth(200),
+                    4: FixedColumnWidth(200),
+                    5: FixedColumnWidth(200),
+                    6: FixedColumnWidth(200),
+                    7: FixedColumnWidth(200),
+                    8: FixedColumnWidth(200),
+                    9: IntrinsicColumnWidth(),
+                  },
+                  border: TableBorder.all(
+                      width: 1, color: const Color.fromARGB(50, 0, 0, 0)),
+                  children: generateSvodTableHead() +
+                      generateSvodTableRows(svodTable),
+                ),
+              )),
         ],
       );
     } else {

@@ -2,10 +2,8 @@ import 'dart:developer';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_eduapp_new/pages/documents_schedule/schedule_markdown_data.dart';
 import 'package:flutter_eduapp_new/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_eduapp_new/widgets/drawer/custom_drawer.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 class PageDocumentSchedule extends StatelessWidget {
   const PageDocumentSchedule({super.key});
@@ -34,12 +32,13 @@ class PageDocumentSchedule extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                width: 1000,
-                child: MarkdownBody(
-                  data: SCHEDULE_MARKDOWN_DATA,
-                  selectable: false,
-                ),
-              ),
+                  width: 1000,
+                  child: Column(
+                    children: [
+                      Image.asset("assets/info_2.jpg"),
+                      Image.asset("assets/info_1.jpg"),
+                    ],
+                  )),
             ),
           ),
         ],
